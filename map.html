@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/main.css" />
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="options-box">
+        <h1>Find Restaurant Ratings</h1>
+
+        <div>
+          <input data-bind="textInput: locationFilter" type="text" placeholder="Filter...">
+        </div>
+
+        <div data-bind="foreach: filteredList" class="listview">
+            <div data-bind="click: itemClicked, css: { selected: selected}" class="listViewItem"> <span data-bind="text: title"></span></div>
+        </div>
+
+      </div>
+
+      
+      
+      <div id="map"></div>
+    </div>
+    
+    <script src="static/jquery-3.2.0.min.js"></script>
+    <script src="static/knockout-3.4.2.js"></script>
+    <script src="map.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBZTPbDqhFGNFshj4gjqjFWms94Ikmb0Q&v=3&callback=initMap" onerror="mapLoadError()">
+    </script>
+
+
+  </body>
+</html>
